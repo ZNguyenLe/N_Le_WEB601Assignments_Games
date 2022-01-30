@@ -2,8 +2,8 @@
 import { Input } from "@angular/core";
 import { Content } from "./content-interface";
 
-class ContentList {
-    private _items: Content[]; //a private array
+export class ContentList {
+    private _items: Content[]; //a private array of content
     static gameCount = 0;
 
     constructor(item:Content) { //sets initial value of items to be empty
@@ -26,6 +26,10 @@ class ContentList {
         get items(): Content[] {
         return this._items;
         }
+        set items(newItem:Content[]){
+            this.items=newItem;
+        }
+        
         Input() {
             this._items;
             return;
@@ -38,5 +42,6 @@ class ContentList {
                 + '<h1>Type' + this._items[index].type + '</h1>'; 
 
             }
+        
 }
 
