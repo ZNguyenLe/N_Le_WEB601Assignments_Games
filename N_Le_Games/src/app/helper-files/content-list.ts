@@ -33,11 +33,12 @@ export class ContentList {
             if (this.gamelength() <= index) {
                 return '<p>index is out of range</p>';
             }
-            return '<h1>Title: ' + this.game[index].title + '</h1>' 
-                + '<h1>Description: ' + this.game[index].description + '</h1>' 
-                + '<h1>Creator: ' + this.game[index].creator + '</h1>' 
-                + '<img src:'  + this.game[index].imgURL +' alt="game" style="width: 150px; height 150px;">' 
-                + '<h1>Type: ' + this.game[index].type + '</h1>'; 
+            return '<h2>Title: ' + this.game[index].title + '</h2>' 
+            + '<img src='  + this.game[index].imgURL + 'alt="Game">' 
+                + '<p>Description: ' + this.game[index].description + '</p>' 
+                + '<p>Creator: ' + this.game[index].creator + '</p>' 
+                
+                + '<p>Type: ' + this.game[index].type + '</p>'; 
 
             }
         
