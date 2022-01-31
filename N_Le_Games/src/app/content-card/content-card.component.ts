@@ -14,7 +14,7 @@ export class ContentCardComponent implements OnInit {
     title: "Fortnite",
     description: "An Online Battle Royal PVP Game",
     creator: "Epic Games",
-    imgURL: "https://static.wikia.nocookie.net/logopedia/images/d/db/Fortnite_S1.svg/revision/latest/scale-to-width-down/250?cb=20210330161743",
+    imgURL: "http://cm1.narvii.com/7192/f75cb8c8074b5ccc961668aa91bbec9256a4c544_00.jpg",
     type: "Game"
   };
   valorant: Content = {
@@ -22,7 +22,7 @@ export class ContentCardComponent implements OnInit {
     title: "Valorant",
     description: "An Online Shooter PVP",
     creator: "Riot Games",
-    imgURL: "https://cdn3.vectorstock.com/i/1000x1000/37/87/valorant-game-logo-icon-eps-10-gaming-streamer-vector-33193787.jpg",
+    imgURL: "https://cdn2.steamgriddb.com/file/sgdb-cdn/logo_thumb/9ebd41e6cbc1e14780805f6fc0d65867.png",
     type: "Game"
   };
   LeagueOfLegends: Content = {
@@ -30,7 +30,7 @@ export class ContentCardComponent implements OnInit {
     title: "League of Legends",
     description: "An Online 5 Moba PVP Game",
     creator: "Riot Games",
-    imgURL: "https://static.wikia.nocookie.net/leagueoflegends/images/0/07/League_of_Legends_icon.png/revision/latest?cb=20191018194326",
+    imgURL: "https://preview.redd.it/itq8rpld8va51.png?width=256&format=png&auto=webp&s=9701ba6228c29bf2d7e3dfffd45b9a3562507289",
     type: "Game"
   };
   

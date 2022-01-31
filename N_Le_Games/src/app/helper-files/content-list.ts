@@ -34,7 +34,7 @@ export class ContentList {
                 return '<p>index is out of range</p>';
             }
             return '<h2>Title: ' + this.game[index].title + '</h2>' 
-            + '<img src='  + this.game[index].imgURL + 'alt="Game">' 
+                + '<img src=' + this.game[index].imgURL + '>' 
                 + '<p>Description: ' + this.game[index].description + '</p>' 
                 + '<p>Creator: ' + this.game[index].creator + '</p>' 
                 
