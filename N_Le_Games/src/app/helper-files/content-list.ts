@@ -3,12 +3,11 @@ import { Input } from "@angular/core";
 import { Content } from "./content-interface";
 
 export class ContentList {
-    private _items: Content[]; //a private array of content
+    private game: Content[]; //a private array of content
     static gameCount = 0;
-
-    constructor() { //sets initial value of items to be empty
-        this._items = [];
-
+    
+    constructor() {  
+        this.game = [];
         this.increaseCount();
         
         }
@@ -24,21 +23,21 @@ export class ContentList {
         }
         
         get items(): Content[] {
-        return this._items;
+        return this.game;
         }
         gamelength(){
-            return this._items.length;
+            return this.game.length;
         }
 
         gameOutput(index:number):string {
             if (this.gamelength() <= index) {
                 return '<p>index is out of range</p>';
             }
-            return '<h1>Title: ' + this._items[index].title + '</h1>' 
-                + '<h1>Description: ' + this._items[index].description + '</h1>' 
-                + '<h1>Creator: ' + this._items[index].creator + '</h1>' 
-                + '<h1>imgURL: ' + this._items[index].imgURL + '</h1>' 
-                + '<h1>Type: ' + this._items[index].type + '</h1>'; 
+            return '<h1>Title: ' + this.game[index].title + '</h1>' 
+                + '<h1>Description: ' + this.game[index].description + '</h1>' 
+                + '<h1>Creator: ' + this.game[index].creator + '</h1>' 
+                + '<img src:'  + this.game[index].imgURL +' alt="game" style="width: 150px; height 150px;">' 
+                + '<h1>Type: ' + this.game[index].type + '</h1>'; 
 
             }
         

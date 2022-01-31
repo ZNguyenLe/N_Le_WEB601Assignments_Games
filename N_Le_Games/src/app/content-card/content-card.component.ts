@@ -30,7 +30,7 @@ export class ContentCardComponent implements OnInit {
     title: "League of Legends",
     description: "An Online 5 Moba PVP Game",
     creator: "Riot Games",
-    imgURL: "https://preview.redd.it/itq8rpld8va51.png?width=256&format=png&auto=webp&s=9701ba6228c29bf2d7e3dfffd45b9a3562507289",
+    imgURL: "https://static.wikia.nocookie.net/leagueoflegends/images/0/07/League_of_Legends_icon.png/revision/latest?cb=20191018194326",
     type: "Game"
   };
   
@@ -42,7 +42,7 @@ export class ContentCardComponent implements OnInit {
     this.contentList.addGame(this.LeagueOfLegends);
   }
   
-
+  
   ngOnInit(): void {
     
   }
