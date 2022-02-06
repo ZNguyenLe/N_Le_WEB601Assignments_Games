@@ -1,3 +1,9 @@
-<p [innerHTML]="contentList.gameOutput(0)"></p>
-<p [innerHTML]="contentList.gameOutput(1)"></p>
-<p [innerHTML]="contentList.gameOutput(2)"></p>
+<header class="header">
+    <h2 class="title">Title: {{ gameList ? gameList.title : "" }}</h2>
+    <p><img (click)="onImageClick()" [src]="gameList ? gameList.imgURL : ''"></p>
+    <div class="stuff">
+    <h3 class="description">Description: {{ gameList ? gameList.description : "" }}</h3>
+    <h3 class="type">Type: {{ gameList ? gameList.type : "" }}</h3>
+    <h3 class="tags">Tags: {{ gameList ? gameList.tags : "" }}</h3>
+</div>
+</header>

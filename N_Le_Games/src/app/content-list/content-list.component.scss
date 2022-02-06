@@ -1,0 +1,10 @@
+:host.isFirst {
+    border: 2px;
+}
+
+app-content-card {
+    display: grid;
+    flex-direction: row;
+    justify-content: center;
+}
+

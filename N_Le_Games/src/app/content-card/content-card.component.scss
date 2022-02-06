@@ -1,0 +1,14 @@
+.header {
+    border: 1px solid blue;
+    padding: 10px;
+    }
+img {
+    height: 75px;
+    width:75px;
+}
+.stuff {
+    display: inline-block;
+}
+:host.is-first {
+border: 5px solid black;
+}
