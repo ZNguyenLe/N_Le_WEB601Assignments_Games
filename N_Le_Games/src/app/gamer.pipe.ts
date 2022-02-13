@@ -6,10 +6,8 @@ import { Content } from '../app/helper-files/content-interface'
 })
 export class GamerPipe implements PipeTransform {
 
-  transform(gameList: Content[], ...args: unknown[]): unknown {
-    return gameList.filter(g => 
-      g.tags != null ? g.tags.length !=0 : false 
-      );
+  transform(gameList: Content[], type?: string): Content[] {
+    return gameList.filter((item) => item.type == type);
   }
 
 }

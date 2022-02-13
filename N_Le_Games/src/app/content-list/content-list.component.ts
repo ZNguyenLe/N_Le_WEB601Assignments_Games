@@ -15,8 +15,8 @@ export class ContentListComponent implements OnInit {
       description: "An Online Battle Royal PVP Game",
       creator: "Epic Games",
       imgURL: "http://cm1.narvii.com/7192/f75cb8c8074b5ccc961668aa91bbec9256a4c544_00.jpg",
-      type: "Game",
-      tags: "gaming"
+      type: "PVP",
+      tags: "PVP"
     },
     {
       id: 2,
@@ -24,8 +24,8 @@ export class ContentListComponent implements OnInit {
       description: "An Online Shooter PVP",
       creator: "Riot Games",
       imgURL: "https://cdn2.steamgriddb.com/file/sgdb-cdn/logo_thumb/9ebd41e6cbc1e14780805f6fc0d65867.png",
-      type: "Game",
-      tags: "gaming"
+      type: "PVP",
+      tags: "PVP"
       
     },
     {
@@ -34,8 +34,8 @@ export class ContentListComponent implements OnInit {
       description: "An Online 5 Moba PVP Game",
       creator: "Riot Games",
       imgURL: "https://preview.redd.it/itq8rpld8va51.png?width=256&format=png&auto=webp&s=9701ba6228c29bf2d7e3dfffd45b9a3562507289",
-      type: "Game",
-      tags: "gaming"
+      type: "",
+      tags: "PVP"
     },
     {
       id: 4,
@@ -43,7 +43,7 @@ export class ContentListComponent implements OnInit {
       description: "An Online 5 Moba PVP Game",
       creator: "Valve Corporation",
       imgURL: "https://cdn-icons-png.flaticon.com/512/871/871366.png",
-      type: "Game",
+      type: "",
       tags: "gaming"
     },
     {
@@ -62,9 +62,25 @@ export class ContentListComponent implements OnInit {
       creator: "Rockstar Games",
       imgURL: "https://image.pngaaa.com/575/2397575-middle.png",
       type: "Game",
-      tags: "gaming"
+      tags: ""
     },
-     ] 
+    {
+      id: 7,
+      title: "Risk of Rain 2",
+      description: "Survival Game",
+      creator: "Hopoo Games",
+      imgURL: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2563bd70-7313-427d-b74c-bd2f44dfb937/de5hxrt-9b723b4b-d688-4490-b9e0-eea843ca98f3.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI1NjNiZDcwLTczMTMtNDI3ZC1iNzRjLWJkMmY0NGRmYjkzN1wvZGU1aHhydC05YjcyM2I0Yi1kNjg4LTQ0OTAtYjllMC1lZWE4NDNjYTk4ZjMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.UJy6LmeVKqa9zGUc53cywvEbFiOra_u779km9nUbos8",
+      type: "Game",
+      tags: "gaming"
+    }
+  ] 
+  stringFilter(gameName: string): void {
+    
+    console.log("We did it, ", gameName);
+    gameName = "somethingelse";
+    console.log("after I tried changing it, ", gameName);
+
+  }   
      constructor() {}
 
   ngOnInit(): void {

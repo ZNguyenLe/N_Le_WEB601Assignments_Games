@@ -1,1 +1,28 @@
-<app-content-card *ngFor="let item of lotsofgames; index as i; first as isFirst" [gameList]="item" [class.is-first]="isFirst" ></app-content-card>
+<input #cardName> <button (click)="stringFilter(cardName.value)">Submit</button>
+{{ cardName.value }}
+
+<app-content-card *ngFor="
+let item of lotsofgames | gamer; index as i; first as isFirst"
+[class.is-first]="isFirst" 
+[gameList]="item" 
+[class.is-game]="item.type == 'Game'" 
+[class.is-pvp]="item.type == 'PVP'">
+</app-content-card>
+
+<app-content-card *ngFor="
+let item of lotsofgames | gamer: 'Game'; index as i; first as isFirst"
+[class.is-first]="isFirst" 
+[gameList]="item" 
+[class.is-game]="item.type == 'Game'" 
+[class.is-pvp]="item.type == 'PVP'">
+</app-content-card>
+
+<app-content-card *ngFor="
+let item of lotsofgames | gamer: 'PVP'; index as i; first as isFirst"
+[class.is-first]="isFirst" 
+[gameList]="item" 
+[class.is-game]="item.type == 'Game'" 
+[class.is-pvp]="item.type == 'PVP'">
+</app-content-card>
+
+<!-- <app-content-card *ngFor="let item of lotsofgames; index as i; first as isFirst" [gameList]="item" [class.is-first]="isFirst" ></app-content-card> -->

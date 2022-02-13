@@ -19,4 +19,5 @@ export class ContentCardComponent implements OnInit {
   onImageClick() {
    console.log(this.gameList?.id, this.gameList?.title);
   }
+
 }
