@@ -80,7 +80,7 @@ export class ContentListComponent implements OnInit {
     for (const value of somegame) {
       console.log(value);
     }
-    if(gameName = gameName) {
+    if(gameName == gameName) {
       console.log('this exists', gameName);
     }
     else {
