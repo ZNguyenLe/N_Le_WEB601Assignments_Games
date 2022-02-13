@@ -68,9 +68,4 @@ export class AppComponent {
       type: ""
     }];
    }
-
-   stringFilter(gameName: string): void {
-    console.log('something changed');
-    gameName = 'something';
-  }
 }

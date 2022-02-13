@@ -1,5 +1,9 @@
-<input #cardName> <button (click)="stringFilter(cardName.value)">Submit</button>
-{{ cardName.value }}
+<input #gameList> <button (click)="stringFilter(gameList.value)">Submit</button>
+{{ gameList.value }}
+
+<div *ngIf="gameList.value ? gameList.title: ''" class="Game">{{gameList.title}}</div>
+<div *ngIf="gameList || stringFilter(gameList)" >{{gameList.title}}</div>
+<!-- <div *ngIf="gameList.title === gameList.value" >{{gameList.title}} exists</div> -->
 
 <app-content-card *ngFor="
 let item of lotsofgames | gamer; index as i; first as isFirst"

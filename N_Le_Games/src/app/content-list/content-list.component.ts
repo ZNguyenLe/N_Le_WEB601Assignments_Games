@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { Content } from '../helper-files/content-interface';
 
 @Component({
@@ -75,13 +76,23 @@ export class ContentListComponent implements OnInit {
     }
   ] 
   stringFilter(gameName: string): void {
-    
+    const somegame = this.lotsofgames.values();
+    for (const value of somegame) {
+      console.log(value);
+    }
+    if(gameName = gameName) {
+      console.log('this exists', gameName);
+    }
+    else {
+      console.log('no exist');
+    }
     console.log("We did it, ", gameName);
-    gameName = "somethingelse";
+    gameName = 'something changed here';
     console.log("after I tried changing it, ", gameName);
-
   }   
-     constructor() {}
+     constructor() {
+       
+     }
 
   ngOnInit(): void {
   }
