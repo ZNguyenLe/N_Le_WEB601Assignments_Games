@@ -77,20 +77,19 @@ export class ContentListComponent implements OnInit {
       tags: "gaming"
     }
   ] 
-  
   stringFilter(gameName: string): void {
-    const game = this.lotsofgames.findIndex((item)=> item.title.toLowerCase());
-    if(game === 1) {
-      console.log('this exists', game);
+    const index = this.lotsofgames.findIndex((item)=> item.title);
+    if(index == 1) {
+      console.log('this exists', index);
       console.log("We did it, ", gameName);
       
     }
-    else {
+    else if(!gameName){
       console.log('nothing exists', gameName);
       console.log("before I tried changing it, ", gameName);
     }
     
-    gameName = gameName;
+    
     
   }   
      constructor() {
