@@ -1,13 +1,8 @@
-<input #gameList> <button (click)="stringFilter(gameList.value)">Submit</button>
-<div class="exist"> {{ gameList.value }}
-</div>
-<div class="noExist">{{ gameList.title }}</div>
-<div *ngIf="gameList.value ? gameList.title: ''" class="Game">{{gameList.title}}</div>
-<div *ngIf="gameList || stringFilter(gameList)" >
-    
-</div>
+<input #gameList>
 
-<!-- <div *ngIf="gameList.title == gameList.value" >{{gameList.title}} exists</div> -->
+<button (click)="stringFilter(gameList.value)">Submit</button>
+<div #gameList class="exist"> {{ gameList ? gameList.value : "" }}
+</div>
 
 <app-content-card *ngFor="
 let item of lotsofgames | gamer; index as i; first as isFirst"
@@ -18,7 +13,7 @@ let item of lotsofgames | gamer; index as i; first as isFirst"
 </app-content-card>
 
 <app-content-card *ngFor="
-let item of lotsofgames | gamer: 'Game'; index as i; first as isFirst"
+let item of (lotsofgames | gamer); index as i; first as isFirst"
 [class.is-first]="isFirst" 
 [gameList]="item" 
 [class.is-game]="item.type == 'Game'" 
@@ -26,7 +21,7 @@ let item of lotsofgames | gamer: 'Game'; index as i; first as isFirst"
 </app-content-card>
 
 <app-content-card *ngFor="
-let item of lotsofgames | gamer: 'PVP'; index as i; first as isFirst"
+let item of (lotsofgames | gamer); index as i; first as isFirst"
 [class.is-first]="isFirst" 
 [gameList]="item" 
 [class.is-game]="item.type == 'Game'" 

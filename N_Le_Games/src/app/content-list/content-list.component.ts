@@ -1,4 +1,6 @@
+import { SelectorMatcher } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
+
 
 import { Content } from '../helper-files/content-interface';
 
@@ -75,23 +77,23 @@ export class ContentListComponent implements OnInit {
       tags: "gaming"
     }
   ] 
+  
   stringFilter(gameName: string): void {
-    const somegame = this.lotsofgames.values();
-    for (const value of somegame) {
-      console.log(value);
-    }
-    if(gameName == gameName) {
-      console.log('this exists', gameName);
+    const game = this.lotsofgames.findIndex((item)=> item.title.toLowerCase());
+    if(game === 1) {
+      console.log('this exists', game);
+      console.log("We did it, ", gameName);
+      
     }
     else {
-      console.log('no exist');
+      console.log('nothing exists', gameName);
+      console.log("before I tried changing it, ", gameName);
     }
-    console.log("We did it, ", gameName);
-    gameName = 'something changed here';
-    console.log("after I tried changing it, ", gameName);
+    
+    gameName = gameName;
+    
   }   
      constructor() {
-       
      }
 
   ngOnInit(): void {
