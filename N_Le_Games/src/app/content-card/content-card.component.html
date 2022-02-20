@@ -5,7 +5,7 @@
         </div> -->
         <div [ngSwitch]="gameList.imgURL">
             <!-- if img isnt set, default src is here instead -->
-            <span><img *ngSwitchCase='""' src="https://logos-world.net/wp-content/uploads/2020/12/Fortnite-Logo-2014-present.png">Non Set Image</span>
+            <span><img *ngSwitchCase='""' src="https://logos-world.net/wp-content/uploads/2020/12/Fortnite-Logo-2014-present.png">None Set Image</span>
             <!-- if its set it would show here -->
             <span><img *ngSwitchCase='"imgURL"'>(Set Image somewhere else)</span>
             <span *ngSwitchDefault>PVP Something</span>
