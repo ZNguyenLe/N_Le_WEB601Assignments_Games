@@ -6,9 +6,10 @@ import { Content } from '../app/helper-files/content-interface'
 })
 export class GamerPipe implements PipeTransform {
 
-  transform(gameList: Content[]): Content[] {
-    return gameList.filter(f => f.type != null ? f.type.length != 0 : false
-      );
+  transform(gameList: Content, dType?: string): string {
+    return gameList.type ?? dType ?? "something";
+   // return gameList.filter(f => f.type != null ? f.type.length != 0 : false
+      
   }
 
 }

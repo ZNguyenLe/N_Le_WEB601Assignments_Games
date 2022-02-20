@@ -1,4 +1,22 @@
 <header class="header">
+    <div *ngIf="gameList">
+        <!-- <div>
+            <img [src]="gameList ? gameList.imgURL : ''">
+        </div> -->
+        <div [ngSwitch]="gameList.imgURL">
+            <span><img *ngSwitchCase='""' src="https://logos-world.net/wp-content/uploads/2020/12/Fortnite-Logo-2014-present.png">Non Set Image</span>
+            <span><img *ngSwitchCase='"imgURL"'>(Set Image somewhere else)</span>
+            <span *ngSwitchDefault>PVP Something</span>
+        </div>
+        <div class="type" >
+            <p appHoverAffect>{{ gameList.type }}</p>
+        </div>
+        
+        <div class="tags">
+            <p appHoverAffect>{{ gameList.tags }}</p>
+        </div>
+        
+    </div>
     <h2 class="title">Title: {{ gameList ? gameList.title : "" }}</h2>
     <p><img (click)="onImageClick()" [src]="gameList ? gameList.imgURL : ''"></p>
     <div class="stuff">

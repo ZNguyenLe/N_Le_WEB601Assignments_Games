@@ -17,31 +17,40 @@ export class ContentListComponent implements OnInit {
       title: "Fortnite",
       description: "An Online Battle Royal PVP Game",
       creator: "Epic Games",
-      imgURL: "http://cm1.narvii.com/7192/f75cb8c8074b5ccc961668aa91bbec9256a4c544_00.jpg",
+      imgURL: '', 
       type: "PVP",
-      tags: "PVP"
+      tags: "PVPGame"
     },
     {
       id: 2,
+      title: "Fortnite",
+      description: "An Online Battle Royal PVP Game",
+      creator: "Epic Games",
+      imgURL: "http://cm1.narvii.com/7192/f75cb8c8074b5ccc961668aa91bbec9256a4c544_00.jpg", //
+      type: "PVP2",
+      tags: "PVPGame2"
+    },
+    {
+      id: 3,
       title: "Valorant",
       description: "An Online Shooter PVP",
       creator: "Riot Games",
       imgURL: "https://cdn2.steamgriddb.com/file/sgdb-cdn/logo_thumb/9ebd41e6cbc1e14780805f6fc0d65867.png",
       type: "PVP",
-      tags: "PVP"
+      tags: "PVP Game"
       
     },
     {
-      id: 3,
+      id: 4,
       title: "League of Legends",
       description: "An Online 5 Moba PVP Game",
       creator: "Riot Games",
       imgURL: "https://preview.redd.it/itq8rpld8va51.png?width=256&format=png&auto=webp&s=9701ba6228c29bf2d7e3dfffd45b9a3562507289",
       type: "",
-      tags: "PVP"
+      tags: "PVP Game"
     },
     {
-      id: 4,
+      id: 5,
       title: "Dota 2",
       description: "An Online 5 Moba PVP Game",
       creator: "Valve Corporation",
@@ -50,7 +59,7 @@ export class ContentListComponent implements OnInit {
       tags: "gaming"
     },
     {
-      id: 5,
+      id: 6,
       title: "Genshin Impact",
       description: "An Open World action RPG",
       creator: "Mihoyo",
@@ -59,7 +68,7 @@ export class ContentListComponent implements OnInit {
       tags: "gaming"
     },
     {
-      id: 6,
+      id: 7,
       title: "Grand Theft Auto V",
       description: "An action-adventure game",
       creator: "Rockstar Games",
@@ -68,7 +77,7 @@ export class ContentListComponent implements OnInit {
       tags: ""
     },
     {
-      id: 7,
+      id: 8,
       title: "Risk of Rain 2",
       description: "Survival Game",
       creator: "Hopoo Games",
@@ -77,6 +86,8 @@ export class ContentListComponent implements OnInit {
       tags: "gaming"
     }
   ] 
+
+  
   stringFilter(gameName: string): void {
     const index = this.lotsofgames.findIndex((item)=> item.title);
     if(index == 1) {
