@@ -8,8 +8,8 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ContentCardComponent implements OnInit {
   @Input() gameList?: Content;
-  specialColorType = 'green';
-  specialColorTag = 'blue';
+  specialColorType = 'green'; // sets font color to green
+  specialColorTag = 'blue'; // sets font color to blue
     constructor() {
       
     }

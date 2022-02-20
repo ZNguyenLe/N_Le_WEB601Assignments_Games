@@ -14,18 +14,17 @@ export class HoverAffectDirective {
 
   }
   @HostListener("mouseenter") hover(btn: any) {
-    this.elm.nativeElement.style.backgroundColor = "pink";
-    this.elm.nativeElement.style.borderBottom = "3px solid green";
-//    this.elm.nativeElement.style.fontWeight = "bold";
-    // this.underline(this.colour);
+    this.elm.nativeElement.style.backgroundColor = "pink";    // sets background color to pink when hovering over tag/type
+    this.elm.nativeElement.style.borderBottom = "3px solid green"; // sets underline color to pink when hovering over tag/type
+//    this.elm.nativeElement.style.fontWeight = "bold";   moved the bold css to the scss in /content-card
+  
   }
   @HostListener("mouseleave") hoverAway(btn: any) {
-    this.elm.nativeElement.style.backgroundColor = "";
-    this.elm.nativeElement.style.borderBottom = "";
+    this.elm.nativeElement.style.backgroundColor = "";  // removes background color if hovered off of tag/type
+    this.elm.nativeElement.style.borderBottom = ""; // removes underline color if hovered off of tag/type
   //  this.elm.nativeElement.style.fontWeight = "";
 
-    // this.underline('');
+
   }
-  // private underline(plsHover?: string): void {
-  // }
+
 }
