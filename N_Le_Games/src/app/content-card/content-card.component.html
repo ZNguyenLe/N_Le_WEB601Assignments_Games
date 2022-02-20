@@ -8,15 +8,19 @@
             <span><img *ngSwitchCase='"imgURL"'>(Set Image somewhere else)</span>
             <span *ngSwitchDefault>PVP Something</span>
         </div>
-        <div class="type" >
-            <p appHoverAffect>{{ gameList.type }}</p>
+        <div class="type" *ngIf="gameList?.type">
+            <p appHoverAffect [style.color]="specialColorType">{{ gameList.type }}</p>
         </div>
         
-        <div class="tags">
-            <p appHoverAffect>{{ gameList.tags }}</p>
+        <div class="tags" *ngIf="gameList?.tags">
+            <p appHoverAffect [style.color]="specialColorTag">{{ gameList.tags }}</p>
         </div>
         
     </div>
+
+
+
+    
     <h2 class="title">Title: {{ gameList ? gameList.title : "" }}</h2>
     <p><img (click)="onImageClick()" [src]="gameList ? gameList.imgURL : ''"></p>
     <div class="stuff">

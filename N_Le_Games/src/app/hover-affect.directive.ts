@@ -14,15 +14,15 @@ export class HoverAffectDirective {
 
   }
   @HostListener("mouseenter") hover(btn: any) {
-    this.elm.nativeElement.style.backgroundColor = "yellow";
+    this.elm.nativeElement.style.backgroundColor = "pink";
     this.elm.nativeElement.style.borderBottom = "3px solid green";
-    this.elm.nativeElement.style.fontWeight = "bold";
+//    this.elm.nativeElement.style.fontWeight = "bold";
     // this.underline(this.colour);
   }
   @HostListener("mouseleave") hoverAway(btn: any) {
     this.elm.nativeElement.style.backgroundColor = "";
     this.elm.nativeElement.style.borderBottom = "";
-    this.elm.nativeElement.style.fontWeight = "";
+  //  this.elm.nativeElement.style.fontWeight = "";
 
     // this.underline('');
   }

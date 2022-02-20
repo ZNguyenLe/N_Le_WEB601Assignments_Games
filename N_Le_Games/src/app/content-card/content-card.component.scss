@@ -12,3 +12,7 @@ img {
 :host.is-first {
 border: 5px solid black;
 }
+
+.tags:hover {
+    font-weight: bold;
+}
