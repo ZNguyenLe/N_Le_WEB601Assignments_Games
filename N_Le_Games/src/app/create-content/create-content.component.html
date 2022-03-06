@@ -1,0 +1,24 @@
+<div>
+    ID: <input #id>
+</div>
+<div>
+    Title: <input #title>
+</div>
+<div>
+    Description: <input #description>
+</div>
+<div>
+    Image: <input #imgURL>
+</div>
+<div>
+    Creator: <input #creator>
+</div>
+<div>
+    Tag: <input #tags>
+</div>
+<div>
+    Type: <input #type>
+</div>
+<div>
+    <button (click)="addGame(id.value, title.value, description.value, imgURL.value, creator.value, tags.value, type.value)">Add Item</button>
+</div>

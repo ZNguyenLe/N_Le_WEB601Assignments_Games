@@ -59,5 +59,32 @@ export class AppComponent {
       imgURL: "https://preview.redd.it/itq8rpld8va51.png?width=256&format=png&auto=webp&s=9701ba6228c29bf2d7e3dfffd45b9a3562507289",
       type: "Game"
     }];
+    let ourPromise = new Promise((success , fail) => {
+      let pass  = false;
+      if (pass) {
+        success("Success achieved");
+      }
+      else {
+        fail("poop failuer");
+      }
+ 
+    })
+
+    ourPromise.then(function (successMsg) {
+      console.log('promise success with,', successMsg);
+    })
+    .catch(function (failureMsg) {
+      console.log('promise failed with,', failureMsg);
+    })
    }
+
+   
+   
+   addGameToList(event: any) {
+     this.lotsofgames.push(event);
+       this.lotsofgames = [...this.lotsofgames];
+      console.log('things get added?', event);
+      console.log(this.lotsofgames);
+   }
+  
 }
