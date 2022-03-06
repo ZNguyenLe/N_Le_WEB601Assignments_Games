@@ -59,6 +59,7 @@ export class AppComponent {
       imgURL: "https://preview.redd.it/itq8rpld8va51.png?width=256&format=png&auto=webp&s=9701ba6228c29bf2d7e3dfffd45b9a3562507289",
       type: "Game"
     }];
+    // supposedly the promise thing. 
     let ourPromise = new Promise((success , fail) => {
       let pass  = false;
       if (pass) {
@@ -69,7 +70,7 @@ export class AppComponent {
       }
  
     })
-
+    // 
     ourPromise.then(function (successMsg) {
       console.log('promise success with,', successMsg);
     })

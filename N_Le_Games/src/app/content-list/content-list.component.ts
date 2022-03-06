@@ -69,10 +69,10 @@ export class ContentListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  addGameToList(newGameFromChild: any) {
-    this.lotsofgames.push(newGameFromChild);
+  addGameToList($newGameFromChild: any) {
+    this.lotsofgames.push($newGameFromChild);
       this.lotsofgames = [...this.lotsofgames];
-     console.log('things get added?', newGameFromChild);
+     console.log('things get added?', $newGameFromChild);
      console.log(this.lotsofgames);
   }
 }
