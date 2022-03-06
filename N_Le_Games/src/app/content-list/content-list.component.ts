@@ -1,7 +1,5 @@
 import { SelectorMatcher } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
-
-
 import { Content } from '../helper-files/content-interface';
 
 @Component({
@@ -11,8 +9,11 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ContentListComponent implements OnInit {
   //@Input() lotsofgames: Content[] ;
-  lotsofgames: Content[] = [
-    {
+  message: string = "";
+  searching: boolean = false;
+  gameList: Content[];
+  constructor() {
+  this.gameList = [{
       id: 1,
       title: "Fortnite",
       description: "An Online Battle Royal PVP Game",
@@ -38,7 +39,6 @@ export class ContentListComponent implements OnInit {
       imgURL: "https://cdn2.steamgriddb.com/file/sgdb-cdn/logo_thumb/9ebd41e6cbc1e14780805f6fc0d65867.png",
       type: "PVP",
       tags: "PVP Game"
-      
     },
     {
       id: 4,
@@ -84,29 +84,34 @@ export class ContentListComponent implements OnInit {
       imgURL: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2563bd70-7313-427d-b74c-bd2f44dfb937/de5hxrt-9b723b4b-d688-4490-b9e0-eea843ca98f3.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI1NjNiZDcwLTczMTMtNDI3ZC1iNzRjLWJkMmY0NGRmYjkzN1wvZGU1aHhydC05YjcyM2I0Yi1kNjg4LTQ0OTAtYjllMC1lZWE4NDNjYTk4ZjMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.UJy6LmeVKqa9zGUc53cywvEbFiOra_u779km9nUbos8",
       type: "Game",
       tags: "gaming"
-    }
-  ] 
-
+    }]; 
   
-  stringFilter(gameName: string): void {
-    const index = this.lotsofgames.findIndex((item)=> item.title);
-    if(index == 1) {
-      console.log('this exists', index);
-      console.log("We did it, ", gameName);
+  }
+  
+  ngOnInit(): void {
+  }
+  
+  stringFilter(searchValue: string): void {
+    let searchList = this.gameList.filter(c => c.title == searchValue);
+     if(searchList.length > 0 ) {
+       this.message = 'found something';
+       this.searching = true;
+      console.log('this exists', searchList);
+      console.log("We did it, ", searchValue);
       
     }
-    else if(!gameName){
-      console.log('nothing exists', gameName);
-      console.log("before I tried changing it, ", gameName);
+    else {
+      console.log('nothing exists', searchList);
+      console.log("before I tried changing it, ", searchValue);
+      this.searching = false;
+      this.message = 'nothing was found';
     }
     
     
     
   }   
-     constructor() {
-     }
+    
 
-  ngOnInit(): void {
-  }
+  
 
 }
