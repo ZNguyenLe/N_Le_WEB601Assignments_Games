@@ -79,8 +79,6 @@ export class AppComponent {
     })
    }
 
-   
-   
    addGameToList(event: any) {
      this.lotsofgames.push(event);
        this.lotsofgames = [...this.lotsofgames];
