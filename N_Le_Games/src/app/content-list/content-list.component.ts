@@ -14,14 +14,16 @@ export class ContentListComponent implements OnInit {
        this.lotsofgames = [];
      }
 
-  ngOnInit(): void {
-    // an async call using that one arrow thing
-    this.gameService.getContentObs().subscribe(GameArray => this.lotsofgames = GameArray);
-    // another one but works the same. (looked at lecture notes)
-    this.gameService.getContentObs().subscribe(GameArray => {
-      return this.lotsofgames = GameArray;
-    })
-  }
+     ngOnInit(): void {
+      // an async call using that one arrow thing
+      this.gameService.getContentObs().subscribe(GameArray => this.lotsofgames = GameArray);
+      // another one but works the same. (looked at lecture notes)
+      this.gameService.getContentObs().subscribe(GameArray => {
+        return this.lotsofgames = GameArray;
+      })
+      
+    }
+  
   addGameToList($newGameFromChild: any) {
     this.lotsofgames.push($newGameFromChild);
       this.lotsofgames = [...this.lotsofgames];

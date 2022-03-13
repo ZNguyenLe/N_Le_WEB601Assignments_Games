@@ -6,6 +6,7 @@ import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { CreateContentComponent } from './create-content/create-content.component';
 import { GamerPipe } from './gamer.pipe';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { GamerPipe } from './gamer.pipe';
     ContentCardComponent,
     ContentListComponent,
     CreateContentComponent,
-    GamerPipe
+    GamerPipe,
+    MessagesComponent
   ],
   imports: [
     BrowserModule
