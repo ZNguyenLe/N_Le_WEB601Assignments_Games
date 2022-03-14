@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Content } from './helper-files/content-interface';
 import { GameServiceService } from './game-service.service';
+import { MessageService } from './message.service';
 
 @Component({
   selector: 'app-root', // app-content-card
@@ -13,9 +14,10 @@ import { GameServiceService } from './game-service.service';
 export class AppComponent implements OnInit {
   title = 'N_Le_Games';
   lotsofgames: Content[];
-  id: Content | undefined;
+  content: Content | undefined;
+  messageService: any;
   
-  constructor(private gameService: GameServiceService) { 
+  constructor(private gameService: GameServiceService, private messageServices: MessageService) { 
     this.lotsofgames = [];
     // supposedly the promise thing. 
     let ourPromise = new Promise((success , fail) => {
@@ -36,16 +38,15 @@ export class AppComponent implements OnInit {
       console.log('promise failed with,', failureMsg);
     })
    }
-
    addGameToList(event: any) {
      this.lotsofgames.push(event);
        this.lotsofgames = [...this.lotsofgames];
       console.log('things get added?', event);
       console.log(this.lotsofgames);
    }
-   observable: Observable<Content> | undefined;
-   ngOnInit() {
-    this.observable;
+  //  observable: Observable<Content> | undefined;
+   ngOnInit(): void {
+    
     // an async call using that one arrow thing
     this.gameService.getContentObs().subscribe(GameArray => {
       this.lotsofgames = GameArray
@@ -54,7 +55,11 @@ export class AppComponent implements OnInit {
     this.gameService.getContentObs().subscribe(GameArray => {
       return this.lotsofgames = GameArray
     });
-    this.gameService.getIdContent(2).subscribe(id => this.id == id)
+    this.gameService.getIdContent(2).subscribe((item) => {
+      this.content = item;
+      return item;
+    })
+    // this.gameService.getIdContent(2).subscribe(id => this.id == id)
 
   //  ngOnInit() {
   //    this.observable;

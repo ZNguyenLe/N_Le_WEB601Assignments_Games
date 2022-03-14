@@ -353,9 +353,7 @@
 
   <!-- Resources -->
   <h2>Resources</h2>
-  <app-content-card *ngIf="observable | async as observable"> 
-    {{ observable.id}}
-  </app-content-card>
+  <app-content-card *ngIf="content" class="serviceThing"> {{ content}}</app-content-card>
     <app-messages></app-messages>
     <app-content-list></app-content-list>
 

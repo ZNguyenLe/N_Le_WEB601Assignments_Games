@@ -10,18 +10,23 @@ import { GameServiceService } from '../game-service.service';
 export class ContentListComponent implements OnInit {
   //@Input() lotsofgames: Content[] ;
   lotsofgames: Content[];
+  content: Content | undefined;
      constructor(private gameService: GameServiceService) {
        this.lotsofgames = [];
      }
 
      ngOnInit(): void {
+      this.lotsofgames = this.gameService.getContent();
       // an async call using that one arrow thing
       this.gameService.getContentObs().subscribe(GameArray => this.lotsofgames = GameArray);
       // another one but works the same. (looked at lecture notes)
       this.gameService.getContentObs().subscribe(GameArray => {
         return this.lotsofgames = GameArray;
       })
-      
+      this.gameService.getIdContent(4).subscribe((item) => {
+        this.content = item;
+        return item;
+      })
     }
   
   addGameToList($newGameFromChild: any) {
