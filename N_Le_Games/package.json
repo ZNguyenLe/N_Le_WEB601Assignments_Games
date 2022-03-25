@@ -1,6 +1,6 @@
 {
   "name": "n-le-games",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "scripts": {
     "ng": "ng",
     "generate": "ng generate",
