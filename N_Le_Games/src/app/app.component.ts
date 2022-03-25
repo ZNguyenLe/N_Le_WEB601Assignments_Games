@@ -57,8 +57,9 @@ export class AppComponent implements OnInit {
     });
     this.gameService.getIdContent(2).subscribe((item) => {
       this.content = item;
-      return item;
-    })
+      this.messageService.add(`${this.content?.id}`);
+      
+    });
     // this.gameService.getIdContent(2).subscribe(id => this.id == id)
 
   //  ngOnInit() {

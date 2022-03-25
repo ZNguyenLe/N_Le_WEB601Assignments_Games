@@ -353,7 +353,7 @@
 
   <!-- Resources -->
   <h2>Resources</h2>
-  <app-content-card *ngIf="content" class="serviceThing"> {{ content}}</app-content-card>
+  <app-content-card [content]="item" class="serviceThing"></app-content-card>
     <app-messages></app-messages>
     <app-content-list></app-content-list>
 

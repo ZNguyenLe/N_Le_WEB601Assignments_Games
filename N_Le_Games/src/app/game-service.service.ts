@@ -23,7 +23,7 @@ export class GameServiceService {
   }
 
   getIdContent(id: number) {
-    const content = this.getContent().find((g) => g.id ==id);
+    const content = this.getContent().find((g) => g.id == id);
     this.messageService.add(`ID: tried getting ID of ${id}`);
     return of(content);
     //return of(this.getContent().find((y) => y.id === id));
