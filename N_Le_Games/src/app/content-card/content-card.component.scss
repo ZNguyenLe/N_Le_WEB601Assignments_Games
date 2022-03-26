@@ -15,3 +15,18 @@ border: 5px solid black;
 .serviceThing {
     box-shadow: 5px solid green;
 }
+
+:host.single-item-on-app-component {
+    box-shadow: 5px 10px #88888899;
+  }
+  .image {
+    width: 300px;
+  }
+  .tag {
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid #ff0000;
+    background-color: aqua;
+    margin: 8px;
+    padding: 8px;
+  }

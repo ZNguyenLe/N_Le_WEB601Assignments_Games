@@ -3,29 +3,55 @@ import { LOTSOFGAMES } from './helper-files/contentDb';
 import { Content } from './helper-files/content-interface';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameServiceService {
+  [x: string]: any;
 
-  constructor(private messageService: MessageService) { }
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-type': 'application/json'})
+  };
+
+// ---------------previous Assignment
+  constructor(private messageService: MessageService, private http: HttpClient) { }
   
-  getContent(): Content[] { // supposedly retrieves content from the content array in contentDb file?
-    return LOTSOFGAMES;
+  getContent(): Observable<Content[]> { // supposedly retrieves content from the content array in contentDb file?
+  this.messageService.add("Content Array Loaded");  
+  return of(LOTSOFGAMES);
   }
 
-  getContentObs(): Observable<Content[]> { // this is the observable way to grab content?
-    const games = of(LOTSOFGAMES);
-    this.messageService.add('Content array loaded');
-    return games;
-    
+  // getIdContent(id: number): Observable<Content> {
+  // let filteredGameList: Content[] = content.filter(gameItem => gameItem.id === id);
+  // if(filteredGameList.length) {
+  // this.messageService.add(`Content with id: ${id}`);
+  // return of(filteredGameList[0]);
+  // }
+  // else {
+  // this.messageService.add("Invalid id number");
+  // return of({
+  // id: -1,
+  // title: "invalid id",
+  // description: "n/a",
+  // creator: "no one"
+  //  });
+  // }
+  // }
+// ----------------
+
+
+  getContent2(): Observable<Content[]> {
+    console.log('Retrieving List');
+    return this.http.get<Content[]>("api/content");
+  }
+  addContent(newGameItem: Content): Observable<Content> {
+    console.log("Adding new Game: ", newGameItem);
+    return this.http.post<Content>("api/content", newGameItem, this.httpOptions);
   }
 
-  getIdContent(id: number) {
-    const content = this.getContent().find((g) => g.id == id);
-    this.messageService.add(`ID: tried getting ID of ${id}`);
-    return of(content);
-    //return of(this.getContent().find((y) => y.id === id));
+  updateContent(gameItem: Content): Observable<any> {
+    return this.http.put("api/content", gameItem, this.httpOptions);
   }
 }

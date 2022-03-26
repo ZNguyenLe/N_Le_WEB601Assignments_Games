@@ -1,7 +1,7 @@
 <p>modify-content-component works!</p>
-<!-- <div>
+<div>
     ID: <input #id>
-</div> -->
+</div>
 <div>
     Title: <input #title>
 </div>
@@ -21,5 +21,6 @@
     Type: <input #type>
 </div>
 <div>
-    <button>Update Game Item</button>
+    <button (click)="addGame(title.value, description.value, imgURL.value, creator.value, tags.value, type.value)">Add Game Item</button>
 </div>
+<!--  -->

@@ -353,10 +353,12 @@
 
   <!-- Resources -->
   <h2>Resources</h2>
-  <app-modify-content-component></app-modify-content-component>
-  <!-- <app-content-card [content]="item" class="serviceThing"></app-content-card> -->
-    <app-messages></app-messages>
-    <app-content-list></app-content-list>
+  <app-modify-content-component (newGameEvent)="addGameToList($event)" (updateGameEvent)="updateGameInList($event)"></app-modify-content-component>
+  <app-messages></app-messages>
+  <app-content-list></app-content-list>
+  <app-content-card *ngFor="let item of lotsofgames; index as i; first as isFirst" [gameList]="item" [class.is-first]="isFirst"></app-content-card>
+    
+
 
   <p>Here are some links to help you get started:</p>
 

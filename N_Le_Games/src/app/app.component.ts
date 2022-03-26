@@ -30,6 +30,8 @@ export class AppComponent implements OnInit {
       }
  
     })
+
+    
     // 
     ourPromise.then(function (successMsg) {
       console.log('promise success with,', successMsg);
@@ -38,32 +40,54 @@ export class AppComponent implements OnInit {
       console.log('promise failed with,', failureMsg);
     })
    }
-   addGameToList(event: any) {
-     this.lotsofgames.push(event);
-       this.lotsofgames = [...this.lotsofgames];
-      console.log('things get added?', event);
-      console.log(this.lotsofgames);
-   }
   //  observable: Observable<Content> | undefined;
-   ngOnInit(): void {
-    
-    // an async call using that one arrow thing
-    this.gameService.getContentObs().subscribe(GameArray => {
-      this.lotsofgames = GameArray
-    });
-    // another one but works the same. (looked at lecture notes)
-    this.gameService.getContentObs().subscribe(GameArray => {
-      return this.lotsofgames = GameArray
-    });
-    this.gameService.getIdContent(2).subscribe((item) => {
-      this.content = item;
-      this.messageService.add(`${this.content?.id}`);
-      
-    });
-    // this.gameService.getIdContent(2).subscribe(id => this.id == id)
+  ngOnInit(): void {
+    this.getGameFromServer();
+  }
 
-  //  ngOnInit() {
-  //    this.observable;
-  //  }
+  getGameFromServer(): void {
+    this.gameService.getContent().subscribe(gameArray => this.lotsofgames = gameArray);
+  }
+  updatePage(cardName: string): void {
+    console.log("showing something", cardName);
+    cardName = "something else";
+    console.log('after changing something', cardName);
+
+    this.title = "Changed from submit button";
+  }
+  updateGameInList(contentItem: Content): void {
+    this.gameService.updateContent(contentItem).subscribe(() => {
+      console.log('Successfully updated Content');
+      this.getGameFromServer();
+    });
+  }
+  addGameToList(newGameFromChild: Content): void {
+    this.gameService.addContent(newGameFromChild).subscribe(newGameFromServer => {
+      console.log("New Server Content: ", newGameFromServer);
+      this.lotsofgames.push(newGameFromServer);
+      this.lotsofgames = [...this.lotsofgames];
+    });
+  }
 }
-}
+
+
+// ngOnInit(): void {            ------ assignment 6
+    
+  // // an async call using that one arrow thing
+  // this.gameService.getContentObs().subscribe(GameArray => {
+  //   this.lotsofgames = GameArray
+  // });
+  // // another one but works the same. (looked at lecture notes)
+  // this.gameService.getContentObs().subscribe(GameArray => {
+  //   return this.lotsofgames = GameArray
+  // });
+  // this.gameService.getIdContent(2).subscribe((item) => {
+  //   this.content = item;
+  //   this.messageService.add(`${this.content?.id}`);
+    
+  // });
+  // this.gameService.getIdContent(2).subscribe(id => this.id == id)
+
+//  ngOnInit() {
+//    this.observable;
+//  }

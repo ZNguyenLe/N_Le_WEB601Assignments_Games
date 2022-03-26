@@ -1,0 +1,15 @@
+:host > div.message-wrapper {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    border: 1px solid #00000099;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  :host > div.message-wrapper h2 {
+    margin-top: 0;
+  }
+  :host > div.message-wrapper div {
+    margin-top: 16px;
+  }
