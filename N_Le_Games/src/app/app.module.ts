@@ -7,6 +7,7 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { CreateContentComponent } from './create-content/create-content.component';
 import { GamerPipe } from './gamer.pipe';
 import { MessagesComponent } from './messages/messages.component';
+import { ModifyContentComponentComponent } from './modify-content-component/modify-content-component.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MessagesComponent } from './messages/messages.component';
     ContentListComponent,
     CreateContentComponent,
     GamerPipe,
-    MessagesComponent
+    MessagesComponent,
+    ModifyContentComponentComponent
   ],
   imports: [
     BrowserModule
