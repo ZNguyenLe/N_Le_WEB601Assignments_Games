@@ -1,7 +1,7 @@
 import { Content } from "./content-interface";
 
 export const LOTSOFGAMES: Content[] = [{
-    id: 1,
+    id: 0,
     title: "Fortnite",
     description: "An Online Battle Royal PVP Game",
     creator: "Epic Games",
@@ -10,7 +10,7 @@ export const LOTSOFGAMES: Content[] = [{
     tags: "gaming"
   },
   {
-    id: 2,
+    id: 1,
     title: "Valorant",
     description: "An Online Shooter PVP",
     creator: "Riot Games",
@@ -20,7 +20,7 @@ export const LOTSOFGAMES: Content[] = [{
     
   },
   {
-    id: 3,
+    id: 2,
     title: "League of Legends",
     description: "An Online 5 Moba PVP Game",
     creator: "Riot Games",
@@ -29,7 +29,7 @@ export const LOTSOFGAMES: Content[] = [{
     tags: "gaming"
   },
   {
-    id: 4,
+    id: 3,
     title: "Dota 2",
     description: "An Online 5 Moba PVP Game",
     creator: "Valve Corporation",
@@ -38,7 +38,7 @@ export const LOTSOFGAMES: Content[] = [{
     tags: "gaming"
   },
   {
-    id: 5,
+    id: 4,
     title: "Genshin Impact",
     description: "An Open World action RPG",
     creator: "Mihoyo",
@@ -47,7 +47,7 @@ export const LOTSOFGAMES: Content[] = [{
     tags: "gaming"
   },
   {
-    id: 6,
+    id: 5,
     title: "Grand Theft Auto V",
     description: "An action-adventure game",
     creator: "Rockstar Games",

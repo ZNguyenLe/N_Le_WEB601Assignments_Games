@@ -9,7 +9,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class GameServiceService {
-  [x: string]: any;
+
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-type': 'application/json'})
@@ -44,14 +44,14 @@ export class GameServiceService {
 
   getContent2(): Observable<Content[]> {
     console.log('Retrieving List');
-    return this.http.get<Content[]>("api/content");
+    return this.http.get<Content[]>("api/game");
   }
   addContent(newGameItem: Content): Observable<Content> {
     console.log("Adding new Game: ", newGameItem);
-    return this.http.post<Content>("api/content", newGameItem, this.httpOptions);
+    return this.http.post<Content>("api/game", newGameItem, this.httpOptions);
   }
 
   updateContent(gameItem: Content): Observable<any> {
-    return this.http.put("api/content", gameItem, this.httpOptions);
+    return this.http.put("api/game", gameItem, this.httpOptions);
   }
 }
