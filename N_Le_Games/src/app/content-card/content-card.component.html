@@ -1,10 +1,14 @@
 
+
 <header class="header">
     <h2 class="title">Title: {{ gameList ? gameList.title : "" }}</h2>
     <p><img (click)="onImageClick()" [src]="gameList ? gameList.imgURL : ''"></p>
     <div class="stuff">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+
     <h3 class="description">Description: {{ gameList ? gameList.description : "" }}</h3>
     <h3 class="type">Type: {{ gameList ? gameList.type : "" }}</h3>
     <h3 class="tags">Tags: {{ gameList ? gameList.tags : "" }}</h3>
+        <mat-progress-bar mode="query"></mat-progress-bar>
 </div>
 </header>

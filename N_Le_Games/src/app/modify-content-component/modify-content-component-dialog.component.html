@@ -2,6 +2,8 @@
 <div mat-dialog-content>
     <h1 mat-dialog-title>Add Game</h1>
 </div>
+<mat-progress-spinner class="spinMargin" [color]="color" [mode]="mode" [value]="value"></mat-progress-spinner>
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
 
 <mat-form-field>
     <mat-label>ID:</mat-label> <input matInput  placeholder="0" #id disabled>
@@ -30,7 +32,6 @@
 <mat-form-field>
     <mat-label>Type:</mat-label> <input matInput placeholder="type" #type>
 </mat-form-field>
-
 <div mat-dialog-actions>
     <button mat-raised-button color="primary" (click)="addGame(title.value, description.value, imgURL.value, creator.value, tags.value, type.value)" [mat-dialog-close] cdkFocusInitial>Add Game Item</button>
     <button mat-raised-button (click)="onNoClick()" color="primary">close</button>

@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     GamerPipe,
     MessagesComponent,
     ModifyContentComponentComponent,
-    DialogContent
+    DialogContent,
+    
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

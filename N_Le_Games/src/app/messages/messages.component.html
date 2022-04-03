@@ -1,10 +1,6 @@
 <div class="message-wrapper" *ngIf="messageService.messages.length">
-
     <h2>Messages</h2>
     <button type="button" class="clear"
             (click)="messageService.clear()">Clear messages</button>
     <div *ngFor='let message of messageService.messages'> {{message}} </div>
-  
   </div>
-<p>This also works, adding 1 item(message component)</p>
-<p>this is the one thats adding ID's ontop of the highest ID given already</p>

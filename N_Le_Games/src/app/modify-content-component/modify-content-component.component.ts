@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'app-modify-content-component',
@@ -13,6 +15,7 @@ export class ModifyContentComponentComponent implements OnInit {
   @Output() updateGameEvent: EventEmitter<Content> = new EventEmitter<Content>();
   newGame?: Content;
 
+  
   constructor(public dialog:MatDialog) { }
 
   ngOnInit(): void {
@@ -55,6 +58,7 @@ export class ModifyContentComponentComponent implements OnInit {
     });
     console.log('this is clicked to open dialog');
   }
+
 }
 
 // ----------------------------------------------------------------------------
@@ -66,8 +70,16 @@ export class ModifyContentComponentComponent implements OnInit {
 })
 
 export class DialogContent {
+// ----------------------------------------------------------------------------
+// ProgressSpinnerMode Material
 
-  constructor (
+  color: ThemePalette = 'warn';
+  mode: ProgressSpinnerMode = 'indeterminate';
+  value = 50;
+
+// ----------------------------------------------------------------------------
+// Dialog Material
+constructor (
     public dialogRef: MatDialogRef<DialogContent>,
     @Inject(MAT_DIALOG_DATA) public data: Content) {}
 
