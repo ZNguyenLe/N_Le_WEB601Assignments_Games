@@ -12,6 +12,7 @@ export class ContentListComponent implements OnInit {
   searchFlag: boolean = false;
 
   gameList: Content[];
+
      constructor(private gameService: GameServiceService) {
        this.gameList = [];
      }
@@ -29,6 +30,15 @@ export class ContentListComponent implements OnInit {
      console.log(this.gameList);
   }
 
+  getGameFromServer(): void {
+    this.gameService.getContent().subscribe(gameArray => this.gameList = gameArray);
+  }
+  updateGameInList(contentItem: Content): void {
+    this.gameService.updateContent(contentItem).subscribe(() => {
+      console.log('Successfully updated Content');
+      this.getGameFromServer();
+    });
+  }
   checkForTitle(searchValue: string): void {
     let searchList = this.gameList.filter(c => c.title == searchValue);
     if (searchList.length > 0) {

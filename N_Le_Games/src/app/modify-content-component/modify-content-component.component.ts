@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormGroup } from '@angular/forms';
+
 @Component({
   selector: 'app-modify-content-component',
   templateUrl: './modify-content-component.component.html',
   styleUrls: ['./modify-content-component.component.scss']
 })
+
 export class ModifyContentComponentComponent implements OnInit {
   @Output() newGameEvent: EventEmitter<Content> = new EventEmitter<Content>();
   @Output() updateGameEvent: EventEmitter<Content> = new EventEmitter<Content>();
@@ -29,6 +30,7 @@ export class ModifyContentComponentComponent implements OnInit {
     };
     this.newGameEvent.emit(this.newGame);
   }
+
   updateGame(id: string, title: string, description: string, imgURL: string, creator: string, tags: string, type: string): void {
     this.newGame = {
       id: parseInt(id),
@@ -41,6 +43,7 @@ export class ModifyContentComponentComponent implements OnInit {
     };
     this.updateGameEvent.emit(this.newGame);
   }
+
   openDialog() {
     const dialogRef = this.dialog.open(DialogContent);
 
@@ -52,20 +55,21 @@ export class ModifyContentComponentComponent implements OnInit {
     });
     console.log('this is clicked to open dialog');
   }
-
 }
+
+// ----------------------------------------------------------------------------
 
 @Component({
   selector: 'modify-content-component-dialog',
   templateUrl: 'modify-content-component-dialog.component.html',
   styleUrls: ['./modify-content-component.component.scss']
 })
+
 export class DialogContent {
 
   constructor (
     public dialogRef: MatDialogRef<DialogContent>,
     @Inject(MAT_DIALOG_DATA) public data: Content) {}
-
 
     @Output() newGameEvent: EventEmitter<Content> = new EventEmitter<Content>();
     newGame?: Content;
@@ -82,6 +86,7 @@ export class DialogContent {
       console.log(this.newGame);
       this.dialogRef.close(this.newGame);
     }
+
   onNoClick() {
     this.dialogRef.close();
   }
