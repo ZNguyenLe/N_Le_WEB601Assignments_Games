@@ -39,6 +39,7 @@ export class ContentListComponent implements OnInit {
       this.getGameFromServer();
     });
   }
+  
   checkForTitle(searchValue: string): void {
     let searchList = this.gameList.filter(c => c.title == searchValue);
     if (searchList.length > 0) {
