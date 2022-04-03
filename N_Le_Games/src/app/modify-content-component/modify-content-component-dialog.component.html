@@ -25,6 +25,6 @@
     <mat-label>Type:</mat-label> <input matInput placeholder="type" #type>
 </mat-form-field>
 <div mat-dialog-actions>
-    <button (click)="addGame(title.value, description.value, imgURL.value, creator.value, tags.value, type.value)" [mat-dialog-close] cdkFocusInitial>Add Game Item</button>
+    <button mat-raised-button color="primary" (click)="addGame(title.value, description.value, imgURL.value, creator.value, tags.value, type.value)" [mat-dialog-close] cdkFocusInitial>Add Game Item</button>
     <button mat-raised-button (click)="onNoClick()" color="primary">close</button>
 </div>
