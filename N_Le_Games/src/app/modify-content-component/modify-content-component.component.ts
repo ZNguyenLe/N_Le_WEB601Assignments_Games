@@ -11,7 +11,7 @@ export class ModifyContentComponentComponent implements OnInit {
   @Output() updateGameEvent: EventEmitter<Content> = new EventEmitter<Content>();
   newGame?: Content;
 
-  constructor() { }
+  constructor(public dialog:MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -41,7 +41,7 @@ export class ModifyContentComponentComponent implements OnInit {
     this.updateGameEvent.emit(this.newGame);
   }
   openDialog() {
-    // this.dialog.open(ModifyContentComponentComponent);
+    this.dialog.open(ModifyContentComponentComponent);
     console.log('this is clicked to open dialog');
   }
 }
