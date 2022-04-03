@@ -27,7 +27,7 @@ export class ModifyContentComponentComponent implements OnInit {
       tags: tags,
       type: type
     };
-    this.newGameEvent.emit(this.newGame, );
+    this.newGameEvent.emit(this.newGame);
   }
   updateGame(id: string, title: string, description: string, imgURL: string, creator: string, tags: string, type: string): void {
     this.newGame = {
@@ -81,7 +81,6 @@ export class DialogContent {
       };
       console.log(this.newGame);
       this.dialogRef.close(this.newGame);
-      this.newGameEvent.emit(this.newGame);
     }
   onNoClick() {
     this.dialogRef.close();
