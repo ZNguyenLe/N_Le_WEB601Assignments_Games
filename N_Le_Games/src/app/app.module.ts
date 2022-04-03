@@ -6,7 +6,7 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { CreateContentComponent } from './create-content/create-content.component';
 import { GamerPipe } from './gamer.pipe';
 import { MessagesComponent } from './messages/messages.component';
-import { ModifyContentComponentComponent } from './modify-content-component/modify-content-component.component';
+import { DialogContent, ModifyContentComponentComponent } from './modify-content-component/modify-content-component.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
@@ -24,7 +24,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     CreateContentComponent,
     GamerPipe,
     MessagesComponent,
-    ModifyContentComponentComponent
+    ModifyContentComponentComponent,
+    DialogContent
   ],
   imports: [
     BrowserModule,

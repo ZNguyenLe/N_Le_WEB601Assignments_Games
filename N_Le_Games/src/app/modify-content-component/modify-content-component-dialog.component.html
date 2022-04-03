@@ -1,9 +1,30 @@
 
 <div mat-dialog-content>
-    <h1>Add ContentType</h1>
-
-    <input #id disabled>
+    <h1 mat-dialog-title>Add Game</h1>
 </div>
+<mat-form-field>
+    <mat-label>ID:</mat-label> <input matInput  placeholder="0" #id disabled>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Title:</mat-label> <input matInput placeholder="title" #title>
+</mat-form-field>
+
+<mat-form-field>
+    <mat-label>Description:</mat-label> <input  matInput placeholder="description" #description>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Image:</mat-label> <input  matInput placeholder="imgURL" #imgURL>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Creator:</mat-label> <input  matInput placeholder="creator" #creator>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Tag:</mat-label> <input  matInput placeholder="tags" #tags>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Type:</mat-label> <input matInput placeholder="type" #type>
+</mat-form-field>
 <div mat-dialog-actions>
-    <button mat-button>Close</button>
+    <button (click)="addGame(title.value, description.value, imgURL.value, creator.value, tags.value, type.value)" [mat-dialog-close] cdkFocusInitial>Add Game Item</button>
+    <button mat-raised-button (click)="onNoClick()" color="primary">close</button>
 </div>

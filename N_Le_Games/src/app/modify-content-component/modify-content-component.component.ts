@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-modify-content-component',
   templateUrl: './modify-content-component.component.html',
@@ -26,7 +27,7 @@ export class ModifyContentComponentComponent implements OnInit {
       tags: tags,
       type: type
     };
-    this.newGameEvent.emit(this.newGame);
+    this.newGameEvent.emit(this.newGame, );
   }
   updateGame(id: string, title: string, description: string, imgURL: string, creator: string, tags: string, type: string): void {
     this.newGame = {
@@ -41,9 +42,17 @@ export class ModifyContentComponentComponent implements OnInit {
     this.updateGameEvent.emit(this.newGame);
   }
   openDialog() {
-    this.dialog.open(ModifyContentComponentComponent);
+    const dialogRef = this.dialog.open(DialogContent);
+
+    dialogRef.afterClosed().subscribe( result => {
+      console.log('Dialog Window Closed');
+      console.log(result);
+      this.newGame = result;
+      this.newGameEvent.emit(this.newGame);
+    });
     console.log('this is clicked to open dialog');
   }
+
 }
 
 @Component({
@@ -52,8 +61,29 @@ export class ModifyContentComponentComponent implements OnInit {
   styleUrls: ['./modify-content-component.component.scss']
 })
 export class DialogContent {
+
   constructor (
-    ) {}
+    public dialogRef: MatDialogRef<DialogContent>,
+    @Inject(MAT_DIALOG_DATA) public data: Content) {}
 
 
+    @Output() newGameEvent: EventEmitter<Content> = new EventEmitter<Content>();
+    newGame?: Content;
+
+    addGame(title: string, description: string, imgURL: string, creator: string, tags: string, type: string): void {
+      this.newGame = {
+        title: title,
+        description: description,
+        imgURL: imgURL,
+        creator: creator,
+        tags: tags,
+        type: type
+      };
+      console.log(this.newGame);
+      this.dialogRef.close(this.newGame);
+      this.newGameEvent.emit(this.newGame);
+    }
+  onNoClick() {
+    this.dialogRef.close();
+  }
 }
