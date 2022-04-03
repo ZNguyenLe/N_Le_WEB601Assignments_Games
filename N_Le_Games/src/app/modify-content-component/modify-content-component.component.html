@@ -3,27 +3,27 @@
 <mat-form-field>
     <mat-label>ID:</mat-label> <input matInput placeholder="0" #id>
 </mat-form-field>
-<div>
-    Title: <input #title>
-</div>
-<div>
-    Description: <input #description>
-</div>
-<div>
-    Image: <input #imgURL>
-</div>
-<div>
-    Creator: <input #creator>
-</div>
-<div>
-    Tag: <input #tags>
-</div>
-<div>
-    Type: <input #type>
-</div>
-<div>
+<mat-form-field>
+    <mat-label>Title:</mat-label> <input matInput placeholder="title" #title>
+</mat-form-field>
+
+<mat-form-field>
+    <mat-label>Description:</mat-label> <input  matInput placeholder="description" #description>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Image:</mat-label> <input  matInput placeholder="imgURL" #imgURL>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Creator:</mat-label> <input  matInput placeholder="creator" #creator>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Tag:</mat-label> <input  matInput placeholder="tags" #tags>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Type:</mat-label> <input matInput placeholder="type" #type>
+</mat-form-field>
+    <button mat-raised-button (click)="openDialog()" color="primary">Add New Content</button>
     <button (click)="addGame(title.value, description.value, imgURL.value, creator.value, tags.value, type.value)">Add Game Item</button>
     <button (click)="updateGame(id.value, title.value, description.value, imgURL.value, creator.value, tags.value, type.value)">Update Game Item</button>
 
-</div>
 <!--  -->

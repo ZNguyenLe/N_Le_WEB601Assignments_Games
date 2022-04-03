@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-modify-content-component',
   templateUrl: './modify-content-component.component.html',
@@ -39,5 +40,20 @@ export class ModifyContentComponentComponent implements OnInit {
     };
     this.updateGameEvent.emit(this.newGame);
   }
+  openDialog() {
+    // this.dialog.open(ModifyContentComponentComponent);
+    console.log('this is clicked to open dialog');
+  }
+}
+
+@Component({
+  selector: 'modify-content-component-dialog',
+  templateUrl: 'modify-content-component-dialog.component.html',
+  styleUrls: ['./modify-content-component.component.scss']
+})
+export class DialogContent {
+  constructor (
+    ) {}
+
 
 }
