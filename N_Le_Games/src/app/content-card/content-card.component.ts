@@ -7,9 +7,9 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent implements OnInit {
-  @Input() gameList?: Content;
+  @Input() gameList: Content;
     constructor() {
-      
+      this.gameList = { id: 0, title: '', description: '', creator: '', imgURL: ''};
     }
     
     
@@ -17,6 +17,6 @@ export class ContentCardComponent implements OnInit {
     
   }
   onImageClick() {
-   console.log(this.gameList?.id, this.gameList?.title);
+   console.log(this.gameList.id, this.gameList.title);
   }
 }

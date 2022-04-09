@@ -48,7 +48,7 @@ export class GameServiceService {
   }
   getContent3(id: number): Observable<Content> {
     console.log('Retrieving List');
-    return this.http.get<Content>("api/game" + id);
+    return this.http.get<Content>("api/game/" + id);
   }
   addContent(newGameItem: Content): Observable<Content> {
     console.log("Adding new Game: ", newGameItem);

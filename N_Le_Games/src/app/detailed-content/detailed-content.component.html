@@ -1,1 +1,19 @@
-<p>testing</p>
+<div *ngIf="gameItem" class="content-{{gameItem?.id}}">
+    <mat-card>
+        <header class="header">
+            <mat-card-title class="title">Title: {{ gameItem ? gameItem.title : "" }}</mat-card-title>
+            <p><img [src]="gameItem ? gameItem.imgURL : ''"></p>
+            <mat-card-content>
+                <div class="stuff">
+                    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        
+                    <h3 class="description">Description: {{ gameItem ? gameItem.description : "" }}</h3>
+                    <h3 class="type">Type: {{ gameItem ? gameItem.type : "" }}</h3>
+                    <h3 class="tags">Tags: {{ gameItem ? gameItem.tags : "" }}</h3>
+                </div>
+        </mat-card-content>
+        </header>
+        </mat-card>
+</div>
+
+

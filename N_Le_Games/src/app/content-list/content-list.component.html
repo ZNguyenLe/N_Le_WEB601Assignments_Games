@@ -1,4 +1,2 @@
 <app-modify-content-component (newGameEvent)="addGameToList($event)" (updateGameEvent)="updateGameInList($event)"></app-modify-content-component>
 <app-content-card *ngFor="let item of gameList; index as i; first as isFirst" [gameList]="item" [class.is-first]="isFirst"></app-content-card>
-
-<!-- <app-content-card *ngFor="let item of lotsofgames; index as i; first as isFirst" [gameList]="item" [class.is-first]="isFirst"></app-content-card> -->

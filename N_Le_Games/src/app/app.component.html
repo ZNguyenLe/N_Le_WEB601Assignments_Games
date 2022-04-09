@@ -1,5 +1,6 @@
  <app-messages></app-messages>
- <a href="content">Content List</a>
+ <a routerLink="content" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Content List</a><br/>
+ <!-- <a routerLink="content/5" routerLinkActive="active">content with 5</a> -->
   <!-- <app-content-list></app-content-list> -->
   <!-- <app-content-card *ngFor="let item of lotsofgames; index as i; first as isFirst" [gameList]="item" [class.is-first]="isFirst"></app-content-card> -->
 <div id="content-wrapper">
