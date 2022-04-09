@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ContentListComponent } from './content-list/content-list.component';
 import { DetailedContentComponent } from './detailed-content/detailed-content.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -12,11 +13,16 @@ const routes: Routes = [
   {
     path: "content/:id", 
     component: DetailedContentComponent,
+  },
+  {
+    path: '**', 
+    component: PageNotFoundComponent,
+  },
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full',
   }
-//   {
-//     path: '**', 
-//     component: PageNotFoundComponent
-//   },
 ];
 
 @NgModule({
