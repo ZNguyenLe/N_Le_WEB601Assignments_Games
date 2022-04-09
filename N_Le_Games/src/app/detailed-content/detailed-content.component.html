@@ -6,12 +6,15 @@
             <mat-card-content>
                 <div class="stuff">
                     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-        
+                    
                     <h3 class="description">Description: {{ gameItem ? gameItem.description : "" }}</h3>
                     <h3 class="type">Type: {{ gameItem ? gameItem.type : "" }}</h3>
                     <h3 class="tags">Tags: {{ gameItem ? gameItem.tags : "" }}</h3>
                 </div>
         </mat-card-content>
+        <h2>Content loaded with: </h2> 
+        <h2>Contentt ID: {{gameItem.id}}</h2>
+        <h2>Content Title: {{gameItem.title}}</h2>
         </header>
         </mat-card>
 </div>

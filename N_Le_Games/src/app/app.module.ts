@@ -19,6 +19,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
 import { DetailedContentComponent } from './detailed-content/detailed-content.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AppRoutingModule } from './app-routing.module';
     ModifyContentComponentComponent,
     DialogContent,
     DetailedContentComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
