@@ -17,6 +17,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
+import { DetailedContentComponent } from './detailed-content/detailed-content.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MatCardModule } from '@angular/material/card';
     MessagesComponent,
     ModifyContentComponentComponent,
     DialogContent,
+    DetailedContentComponent,
   ],
   imports: [
     BrowserModule,
