@@ -1,3 +1,7 @@
-  <app-messages></app-messages>
-  <app-content-list></app-content-list>
-  <app-content-card *ngFor="let item of lotsofgames; index as i; first as isFirst" [gameList]="item" [class.is-first]="isFirst"></app-content-card>
+ <app-messages></app-messages>
+ <a href="content">Content List</a>
+  <!-- <app-content-list></app-content-list> -->
+  <!-- <app-content-card *ngFor="let item of lotsofgames; index as i; first as isFirst" [gameList]="item" [class.is-first]="isFirst"></app-content-card> -->
+<div id="content-wrapper">
+  <router-outlet></router-outlet>
+</div>

@@ -46,6 +46,10 @@ export class GameServiceService {
     console.log('Retrieving List');
     return this.http.get<Content[]>("api/game");
   }
+  getContent3(id: number): Observable<Content> {
+    console.log('Retrieving List');
+    return this.http.get<Content>("api/game" + id);
+  }
   addContent(newGameItem: Content): Observable<Content> {
     console.log("Adding new Game: ", newGameItem);
     return this.http.post<Content>("api/game", newGameItem, this.httpOptions);
