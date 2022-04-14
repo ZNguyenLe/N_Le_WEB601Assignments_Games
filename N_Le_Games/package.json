@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "generate": "ng generate",
-    "start": "ng serve",
+    "start": "http-server -p 8080 -c-1 dist/n-le-games",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -26,6 +26,7 @@
     "@angular/router": "~13.2.0",
     "@angular/service-worker": "~13.2.0",
     "angular-in-memory-web-api": "^0.13.0",
+    "http-server": "^13.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
