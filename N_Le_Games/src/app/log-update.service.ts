@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
-import { SwUpdate } from '@angular/service-worker'
+import { SwUpdate } from '@angular/service-worker';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class LogUpdateService {
 
-  constructor(private update: SwUpdate) { }
+  constructor(private update: SwUpdate, private snackBar: MatSnackBar) { }
 
+  openSnack(message: string, action: string) {
+    this.snackBar.open(message, action);
+  }
+  
   public init() {
     this.update.versionUpdates.subscribe(event => {
       console.log('check changes if there is any');

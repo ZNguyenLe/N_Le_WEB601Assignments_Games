@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Content } from './helper-files/content-interface';
 import { GameServiceService } from './game-service.service';
 import { MessageService } from './message.service';
-
+import { LogUpdateService } from './log-update.service';
 @Component({
   selector: 'app-root', // app-content-card
   templateUrl: './app.component.html',
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   content: Content | undefined;
   messageService: any;
   
-  constructor(private gameService: GameServiceService, private messageServices: MessageService) { 
+  constructor(private gameService: GameServiceService, private messageServices: MessageService, private logService: LogUpdateService) { 
     this.lotsofgames = [];
     // supposedly the promise thing. 
     let ourPromise = new Promise((success , fail) => {
@@ -42,7 +42,8 @@ export class AppComponent implements OnInit {
    }
   //  observable: Observable<Content> | undefined;
   ngOnInit(): void {
-    this.getGameFromServer();
+    this.logService.init();
+    //this.getGameFromServer();
   }
 
   getGameFromServer(): void {
