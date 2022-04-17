@@ -55,10 +55,10 @@ export class AppComponent implements OnInit {
   //  observable: Observable<Content> | undefined;
   ngOnInit(): void {
     this.logService.init();
-    const stableApp = this.appRef.isStable.pipe(first(isStable => isStable === true));
-    const every1min = interval(6000);
-    const morestable = concat(stableApp, every1min);
-    morestable.subscribe(() => this.update.checkForUpdate());
+    // const stableApp = this.appRef.isStable.pipe(first(isStable => isStable === true));
+    // const every1min = interval(6000);
+    // const morestable = concat(stableApp, every1min);
+    // morestable.subscribe(() => this.update.checkForUpdate());
     //this.getGameFromServer();
   }
 

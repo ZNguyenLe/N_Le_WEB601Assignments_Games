@@ -22,6 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { environment } from '../environments/environment';
     MatButtonModule,
     MatInputModule,
     MatDialogModule,
+    MatSnackBarModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatCardModule,
