@@ -10,7 +10,7 @@ import { Action } from 'rxjs/internal/scheduler/Action';
 })
 export class LogUpdateService {
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
-  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   constructor(private update: SwUpdate, private snackBar: MatSnackBar) { 
     // const stableApp = this.appRef.isStable.pipe(first(isStable => isStable === true));
@@ -21,8 +21,7 @@ export class LogUpdateService {
 
   openSnack(message: string, action: SwUpdate) {
     this.snackBar.open('there is an update available', 'update', {
-    horizontalPosition: this.horizontalPosition,
-    verticalPosition: this.verticalPosition,
+
   });
 }
   public init() {
@@ -36,7 +35,10 @@ export class LogUpdateService {
           console.log(`Current Version: ${event.currentVersion.hash}`);
           console.log(`gotchu a new update ready: ${event.latestVersion.hash}`);
           this.update.activateUpdate().then(() => {
-            this.snackBar.open('Update is Available', 'Update')
+            this.snackBar.open('Update is Available', 'Update', {
+              horizontalPosition: this.horizontalPosition,
+              verticalPosition: this.verticalPosition,
+            })
             .onAction().subscribe(() => document.location.reload());
           });
           break;
