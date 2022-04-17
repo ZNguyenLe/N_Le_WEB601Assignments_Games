@@ -1,11 +1,14 @@
 
 // import { Content } from '@angular/compiler/src/render3/r3_ast';
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ApplicationRef, Component, OnInit } from '@angular/core';
+import { concat, first, interval, Observable } from 'rxjs';
 import { Content } from './helper-files/content-interface';
 import { GameServiceService } from './game-service.service';
 import { MessageService } from './message.service';
 import { LogUpdateService } from './log-update.service';
+import { SwUpdate } from '@angular/service-worker';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-root', // app-content-card
   templateUrl: './app.component.html',
@@ -17,7 +20,13 @@ export class AppComponent implements OnInit {
   content: Content | undefined;
   messageService: any;
   
-  constructor(private gameService: GameServiceService, private messageServices: MessageService, private logService: LogUpdateService) { 
+  constructor(private gameService: GameServiceService, 
+    private messageServices: MessageService, 
+    private logService: LogUpdateService,
+    private appRef: ApplicationRef,
+    private update: SwUpdate,
+    // private snackBar: MatSnackBar
+    ) { 
     this.lotsofgames = [];
     // supposedly the promise thing. 
     let ourPromise = new Promise((success , fail) => {
@@ -40,9 +49,16 @@ export class AppComponent implements OnInit {
       console.log('promise failed with,', failureMsg);
     })
    }
+  //  openSnack(message: string, action: string) {
+  //   this.snackBar.open(message, action);
+  // }
   //  observable: Observable<Content> | undefined;
   ngOnInit(): void {
     this.logService.init();
+    const stableApp = this.appRef.isStable.pipe(first(isStable => isStable === true));
+    const every1min = interval(6000);
+    const morestable = concat(stableApp, every1min);
+    morestable.subscribe(() => this.update.checkForUpdate());
     //this.getGameFromServer();
   }
 

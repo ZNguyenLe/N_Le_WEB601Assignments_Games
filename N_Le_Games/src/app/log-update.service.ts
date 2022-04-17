@@ -8,11 +8,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class LogUpdateService {
 
-  constructor(private update: SwUpdate, private snackBar: MatSnackBar) { }
+  constructor(private update: SwUpdate) { }
 
-  openSnack(message: string, action: string) {
-    this.snackBar.open(message, action);
-  }
+  
   
   public init() {
     this.update.versionUpdates.subscribe(event => {

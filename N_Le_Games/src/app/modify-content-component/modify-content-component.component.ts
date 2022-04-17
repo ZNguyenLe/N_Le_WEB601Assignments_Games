@@ -49,8 +49,7 @@ export class ModifyContentComponentComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(DialogContent);
-
-    dialogRef.afterClosed().subscribe( result => {
+      dialogRef.afterClosed().subscribe( result => {
       console.log('Dialog Window Closed');
       console.log(result);
       this.newGame = result;
